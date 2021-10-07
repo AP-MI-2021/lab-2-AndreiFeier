@@ -18,7 +18,36 @@ def test_get_largest_prime_below():
     n = int(input("1) n = "))
     get_largest_prime_below(n)
 
-" Problema 6"
+
+" Problema 3 "
+
+def is_prime(n):
+  
+  if (n==0 or n==1):
+      return False
+  for d in range(2, n//2):
+    if (n%d==0):
+        return False
+  return True
+
+def get_goldbach(n):
+    ok=True
+    for i in range(2,n//2+1):
+        p1=i
+        p2=n-i
+        if is_prime(p1) and is_prime(p2):
+            ok=False
+            print(p1,p2)
+            break
+    if ok==True:
+        print("Nu are proprietatea")
+def test_get_goldbach():
+    n=int(input("3) n = "))
+    get_goldbach(n)
+            
+    
+   
+"Problema 6"
 def is_superprime(n):
     while n!=0:
         if n<2:
@@ -34,7 +63,9 @@ def test_is_superprime():
         print(" Superprim ")
     else:
         print(" Nu e superprim")
+    
 test_get_largest_prime_below()
 test_is_superprime()
+test_get_goldbach()
 
             
